@@ -1,2 +1,0 @@
-const t={form:document.querySelector("#task-form"),list:document.querySelector("#task-list")};function e(t){const e={};return new FormData(t.currentTarget).forEach(((t,n)=>{e[n]=t})),e}function n(t){return`<li class="task-list-item">\n       <button class="task-list-item-btn">Удалить</button>\n       <h3>${t.taskName}</h3>\n       <p>${t.taskText}</p>\n   </li>`}t.form.addEventListener("submit",(function(r){r.preventDefault();const s=n(e(r));t.list.insertAdjacentHTML("beforeend",s),t.form.reset()}));
-//# sourceMappingURL=index.f6b0e428.js.map
