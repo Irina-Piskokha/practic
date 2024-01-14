@@ -19,6 +19,7 @@ import { refs } from './js/refs';
 import { createTask } from './js/createTask';
 import { createTaskMarkup } from './js/createTaskMarkup';
 import { localStorageAPI } from './js/localStorageAPI';
+import { renderTasks } from './js/renderTasks';
 
 refs.form.addEventListener('submit', onFormSubmit);
 
@@ -30,3 +31,5 @@ function onFormSubmit(evt) {
   localStorageAPI.saveTask(task);
   refs.form.reset();
 }
+
+renderTasks();
