@@ -18,6 +18,7 @@
 import { refs } from './js/refs';
 import { createTask } from './js/createTask';
 import { createTaskMarkup } from './js/createTaskMarkup';
+import { localStorageAPI } from './js/localStorageAPI';
 
 refs.form.addEventListener('submit', onFormSubmit);
 
@@ -26,5 +27,6 @@ function onFormSubmit(evt) {
   const task = createTask(evt);
   const markup = createTaskMarkup(task);
   refs.list.insertAdjacentHTML('beforeend', markup);
+  localStorageAPI.saveTask(task);
   refs.form.reset();
 }
