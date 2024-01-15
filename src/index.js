@@ -33,3 +33,11 @@ function onFormSubmit(evt) {
 }
 
 renderTasks();
+
+refs.list.addEventListener('click', deleteTask);
+function deleteTask(event) {
+  if (event.target.nodeName === 'BUTTON') {
+    const id = event.target.dataset.id;
+    console.log(id);
+  }
+}
