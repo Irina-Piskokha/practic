@@ -8,4 +8,8 @@ function getAll() {
   return JSON.parse(localStorage.getItem(LOCAL_STORAGE)) || [];
 }
 
-export const localStorageAPI = { saveTask, getAll };
+function setItem(updatedArray) {
+  localStorage.setItem(LOCAL_STORAGE, JSON.stringify(updatedArray));
+}
+
+export const localStorageAPI = { saveTask, getAll, setItem };
