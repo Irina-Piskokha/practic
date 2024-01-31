@@ -37,7 +37,12 @@ renderTasks();
 refs.list.addEventListener('click', deleteTask);
 function deleteTask(event) {
   if (event.target.nodeName === 'BUTTON') {
-    const id = event.target.dataset.id;
-    console.log(id);
+    const idNumber = event.target.dataset.id;
+    const arrayFromLS = localStorageAPI.getAll();
+
+    const updatedArray = arrayFromLS.filter(({ id }) => id !== idNumber);
+
+    localStorageAPI.setItem(updatedArray);
+    event.target.closest('li').remove();
   }
 }
